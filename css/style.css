@@ -2,8 +2,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Quicksand', sans-serif;
-    font-weight: bold;
+    font-family: 'Marmelad', sans-serif;
+    text-decoration: none;
+    list-style: none;
 }
 
 :root {
@@ -16,54 +17,112 @@
     --clr-slate: #21282a;
     --clr-transparent: #ffffff00;
 }
-html{
 
-}
+html {}
 
-.cores{
-    
+/* #region cores*/
+.cores {
     text-align: center;
     align-items: center;
     justify-content: center;
-    & .vanilla{
+
+    & .vanilla {
         background-color: var(--clr-vanilla);
         padding: 1rem;
     }
-    & .sage{
+
+    & .sage {
         background-color: var(--clr-sage);
         padding: 1rem;
     }
-    & .teal{
+
+    & .teal {
         background-color: var(--clr-teal);
         color: var(--clr-vanilla);
         padding: 1rem;
     }
-    & .midnight{
+
+    & .midnight {
         background-color: var(--clr-midnight);
         color: var(--clr-vanilla);
         padding: 1rem;
     }
-    & .ebony{
+
+    & .ebony {
         background-color: var(--clr-ebony);
         color: var(--clr-vanilla);
         padding: 1rem;
     }
-    & .onyx{
+
+    & .onyx {
         background-color: var(--clr-onyx);
         color: var(--clr-vanilla);
         padding: 1rem;
     }
-    & .slate{
+
+    & .slate {
         background-color: var(--clr-slate);
         color: var(--clr-vanilla);
         padding: 1rem;
     }
 }
+
+/* #endregion */
+
+/* #region body*/
 body {
-    display: flex;
-    height: 100vh;
-    background-color: #ffffff; /* Cor do fundo */
+    background: var(--clr-midnight);
 }
-/* #region */
+
+/* #endregion */
+
+/* #region header*/
+header {
+    background: var(--clr-ebony);
+    padding: 0 2rem;
+
+    & .navbar {
+        display: flex;
+        text-align: center;
+        justify-content: space-between;
+
+        & .menu {
+            color: var(--clr-vanilla);
+
+            & ul {
+                display: flex;
+
+                & li {
+                    margin: 0.6rem 1rem;
+                    transition: transform 0.3s ease;
+
+                    & a {
+                        color: var(--clr-vanilla);
+                        transition: color 0.3s ease, transform 0.3s ease;
+                        display: inline-block; /*inline-block; precisei para o sacle funcionar'-' */
+                        &:hover {
+                            color: var(--clr-sage);
+                            transform: scale(1.1);
+                        }
+                    }
+                }
+            }
+        }
+
+        & .logo {
+            & img {
+                display: flex;
+                height: 2rem;
+                align-items: center;
+                margin: 0.2rem;
+                transition: transform 0.3s ease;
+
+                &:hover {                   
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+}
 
 /* #endregion */
