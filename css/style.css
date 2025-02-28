@@ -99,7 +99,9 @@ header {
                     & a {
                         color: var(--clr-vanilla);
                         transition: color 0.3s ease, transform 0.3s ease;
-                        display: inline-block; /*inline-block; precisei para o sacle funcionar'-' */
+                        display: inline-block;
+
+                        /*inline-block; precisei para o sacle funcionar'-' */
                         &:hover {
                             color: var(--clr-sage);
                             transform: scale(1.1);
@@ -117,9 +119,76 @@ header {
                 margin: 0.2rem;
                 transition: transform 0.3s ease;
 
-                &:hover {                   
+                &:hover {
                     transform: scale(1.1);
                 }
+            }
+        }
+    }
+}
+
+/* #endregion */
+
+/* #region container*/
+.container {
+    & .home {
+        padding: 2rem;
+        display: flex;
+        gap: 1.2rem;
+        justify-content: center;
+
+        & .galery {
+            position: relative;
+
+            & img {
+                filter: brightness(20%);
+                border-radius: 10px;
+            }
+        }
+
+
+        & .text {
+            & ul {
+                & li.titulo {
+                    /* width: 100%; */
+                    position: absolute;
+                    top: 40%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    color: white;
+                    font-size: 4rem;
+                    font-weight: bold;
+                }
+
+                & li.subtitulo {
+                    position: absolute;
+                    top: 48%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    color: white;
+                    font-size: 2rem;
+
+                }
+            }
+        }
+
+        & button {
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 4rem;
+            background-color: var(--clr-transparent);
+            color: white;
+            border: 1px solid white;
+            padding: 1rem 3rem;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 1.2rem;
+            transition: background 0.3s ease;
+
+            &:hover{
+                background-color: #79ae9280;
             }
         }
     }
