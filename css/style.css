@@ -18,7 +18,10 @@
     --clr-transparent: #ffffff00;
 }
 
-html {}
+html,
+body {
+    overflow-x: hidden;
+}
 
 /* #region cores*/
 .cores {
@@ -78,6 +81,7 @@ body {
 
 /* #region header*/
 header {
+    /* background: linear-gradient(var(--clr-ebony),var(--clr-ebony),var(--clr-ebony), var(--clr-transparent)); */
     background: var(--clr-ebony);
     display: flex;
     justify-content: space-around;
@@ -85,7 +89,9 @@ header {
     width: 100%;
     margin: 0 auto;
     color: var(--clr-color-red);
-    padding: 1rem 2rem;
+    padding: 0.5rem 2rem;
+    z-index: 1000;
+    position: fixed;
 
     & .navbar {
         display: flex;
@@ -137,9 +143,11 @@ header {
 & .home {
     height: 100vh;
     padding: 2rem;
+    padding-top: 8rem;
     display: flex;
     justify-content: center;
     flex-direction: column;
+    position: relative;
 
     & .galery {
         display: flex;
@@ -151,7 +159,8 @@ header {
 
         & img {
             width: 500px;
-            height: 100%;
+            max-width: 100%;
+            height: auto;
         }
     }
 
@@ -196,20 +205,20 @@ header {
         align-items: center;
         width: auto;
         max-width: 80%;
-    
+
         & a {
             color: var(--clr-midnight);
             font-size: 3vw
         }
-    
+
         &:hover {
             background-color: var(--clr-ebony);
-    
+
             & a {
                 color: var(--clr-vanilla);
             }
         }
-    
+
         & .button-link {
             font-size: 2.5vw;
             color: var(--clr-vanilla);
@@ -228,20 +237,25 @@ header {
 
 @media (max-width: 768px) {
     & .home {
+        padding-top: 12rem;
+
         & .text {
-            top: 55%;
+            top: 50%;
             left: 50%;
             text-align: center;
             height: 100vh;
             transform: translate(-50%, -50%);
 
             & h1 {
+
                 &.titulo {
-                    font-size: 7.5vw; /* Mantive a mudança para responsividade */
+                    color: var(--clr-sage);
+                    font-size: 3rem;
                 }
 
                 &.subtitulo {
-                    font-size: 2.5vw;
+                    color: var(--clr-vanilla);
+                    font-size: 1.2rem;
                 }
             }
         }
@@ -251,23 +265,23 @@ header {
             top: 65%;
             left: 50%;
             transform: translate(-50%, -50%);
-            padding: 1rem 2rem; /* Ajustei o padding para melhor ajuste */
-            
+
             & a {
-                color: var(--clr-midnight);
+                color: var(--clr-midnigh);
             }
-    
+
             &:hover {
                 background-color: var(--clr-ebony);
                 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    
+
                 & a {
                     color: var(--clr-vanilla);
                 }
             }
-    
+
             & .button-link {
-                font-size: 2.5vw; /* Responsividade ajustada */
+                font-size: 2.5vw;
+                color: var(--clr-vanilla);
                 text-decoration: none;
             }
         }
@@ -275,9 +289,13 @@ header {
         & .galery {
             display: flex;
             gap: 1rem;
+            flex-direction: column;
 
             & img {
-                width: 300px; /* Tamanho ajustado das imagens */
+                width: 500px;
+                height: 300px;
+                object-fit: cover;
+                border-radius: 2rem;
             }
         }
     }
@@ -285,45 +303,52 @@ header {
 
 @media (max-width: 480px) {
     & .home {
+        padding-top: 12rem;
+
         & .text {
-            top: 68%;
+            top: 58%;
             left: 50%;
             text-align: center;
             height: 100vh;
             transform: translate(-50%, -50%);
 
             & h1 {
+
                 &.titulo {
-                    font-size: 6.5vw; /* Ajuste do título */
+                    color: var(--clr-sage);
+                    font-size: 2.2rem;
                 }
 
                 &.subtitulo {
-                    font-size: 2.5vw;
+                    color: var(--clr-vanilla);
+                    font-size: 0.8rem;
                 }
             }
         }
 
         & .button {
             position: absolute;
-            top: 76%;
+            top: 67%;
             left: 50%;
             transform: translate(-50%, -50%);
-            padding: 0.5rem 1.5rem; /* Ajustei o padding para telas pequenas */
-            
+            padding: 0.1rem 0.8rem;
+
             & a {
-                color: var(--clr-midnight);
+                color: var(--clr-midnigh);
             }
-    
+
             &:hover {
                 background-color: var(--clr-ebony);
-    
+
                 & a {
                     color: var(--clr-vanilla);
                 }
             }
-    
+
             & .button-link {
-                font-size: 2.5vw; /* Tamanho do link ajustado */
+                color: var(--clr-vanilla);
+                text-decoration: none;
+
             }
         }
 
@@ -331,7 +356,10 @@ header {
             display: flex;
 
             & img {
-                width: 100px; /* Tamanho ajustado das imagens */
+                width: 300px;
+                height: 200px;
+                object-fit: cover;
+                border-radius: 2rem;
             }
         }
     }
@@ -535,7 +563,7 @@ header {
 
             &:hover {
                 background-color: var(--clr-ebony);
-    
+
                 & a {
                     color: var(--clr-vanilla);
                 }
@@ -602,29 +630,56 @@ header {
 
 /* #region footer */
 footer {
-    padding: 1rem;
     background-color: var(--clr-ebony);
+    color: var(--clr-vanilla);
+    padding: 1rem 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 
     & .footerContainer {
         display: flex;
         justify-content: space-around;
+        gap: 2rem;
+        align-items: center;
 
         & .name {
-            margin: 0 0.8em;
-            display: flex;
-            align-items: center;
-
-            & h1 {
-                color: var(--clr-vanilla);
-                font-size: 1em;
-            }
+            font-size: 1rem;
         }
 
         & .imgFooter {
-            margin: 0 0.8em;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
 
-            & img {
-                width: 30px;
+            & a {
+                display: inline-block;
+
+                & img {
+                    width: 2rem;
+                    height: 2rem;
+                    transition: transform 0.3s ease;
+
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    footer {
+        & .footerContainer {
+            & .name {}
+        }
+    }
+
+    @media (max-width: 480px) {
+        footer {
+            & .footerContainer {
+                & .name {}
             }
         }
     }
