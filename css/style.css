@@ -460,12 +460,35 @@ header {
         }
     }
 }
-    /* #endregion */
+
+/* #endregion */
 
 /* #region footer */
-    footer {
-        padding: 1rem;
-        background-color: var(--clr-ebony);
-    }
+footer {
+    padding: 1rem;
+    background-color: var(--clr-ebony);
 
- /* #endregion */
+    & .footerContainer {
+        display: flex;
+        justify-content: space-between;
+
+        & .name {
+            margin: 0 0.8em;
+            display: flex;
+            align-items: center;
+            & h1 {
+                color: var(--clr-vanilla);
+                font-size: 1em;
+            }
+        }
+
+        & .imgFooter {
+            margin: 0 0.8em;
+            & img {
+                width: 30px;
+            }
+        }
+    }
+}
+
+/* #endregion */
