@@ -18,9 +18,14 @@
     --clr-transparent: #ffffff00;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 html,
 body {
     overflow-x: hidden;
+    /* scroll-behavior: smooth; */
 }
 
 /* #region cores*/
@@ -92,6 +97,7 @@ header {
     padding: 0.5rem 2rem;
     z-index: 1000;
     position: fixed;
+    height: 4vh;
 
     & .navbar {
         display: flex;
@@ -140,10 +146,9 @@ header {
 
 /* #region home*/
 
-& .home {
-    height: 100vh;
+#home {
+    height: 96vh;
     padding: 2rem;
-    padding-top: 8rem;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -236,11 +241,11 @@ header {
 
 
 @media (max-width: 768px) {
-    & .home {
-        padding-top: 12rem;
+    #home {
+        height: 100vh;
 
         & .text {
-            top: 50%;
+            top: 45%;
             left: 50%;
             text-align: center;
             height: 100vh;
@@ -262,7 +267,7 @@ header {
 
         & .button {
             position: absolute;
-            top: 65%;
+            top: 55%;
             left: 50%;
             transform: translate(-50%, -50%);
 
@@ -293,7 +298,7 @@ header {
 
             & img {
                 width: 500px;
-                height: 300px;
+                height: 250px;
                 object-fit: cover;
                 border-radius: 2rem;
             }
@@ -302,11 +307,11 @@ header {
 }
 
 @media (max-width: 480px) {
-    & .home {
-        padding-top: 12rem;
+    #home {
+        height: 100vh;
 
         & .text {
-            top: 58%;
+            top: 48%;
             left: 50%;
             text-align: center;
             height: 100vh;
@@ -328,7 +333,7 @@ header {
 
         & .button {
             position: absolute;
-            top: 67%;
+            top: 55%;
             left: 50%;
             transform: translate(-50%, -50%);
             padding: 0.1rem 0.8rem;
@@ -365,10 +370,23 @@ header {
     }
 }
 
+@media (min-width: 800px) {
+    #home {
+        & .galery {
+            display: flex;
+
+            & img {
+                height: 750px;
+                width: auto;
+            }
+        }
+    }
+}
+
 /* #endregion */
 
 /* #region sobre */
-.sobre {
+#sobre {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -436,7 +454,7 @@ header {
 /* #endregion */
 
 /* #region experiencia */
-.experiencia {
+#experiencia {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -505,13 +523,13 @@ header {
 /* #endregion */
 
 /* #region projetos */
-.projetos {
+#projetos {
     & .projectsContainer {
         padding: 1rem;
         display: flex;
         justify-content: center;
         align-items: center;
-        min-height: 100vh;
+        min-height: 94vh;
         gap: 8rem;
         flex-direction: column;
         width: 100%;
@@ -573,7 +591,7 @@ header {
 }
 
 @media (max-width: 768px) {
-    & .projetos {
+    #projetos {
 
         & .projectsContainer {
             gap: 2rem;
@@ -603,7 +621,7 @@ header {
 }
 
 @media (max-width: 480px) {
-    & .projetos {
+    #projetos {
 
         & .projectsContainer {
 
@@ -632,16 +650,20 @@ header {
 footer {
     background-color: var(--clr-ebony);
     color: var(--clr-vanilla);
-    padding: 1rem 0;
+    justify-content: center;
     position: relative;
     bottom: 0;
     width: 100%;
+    height: 6vh;
+    align-items: center;
+    display: flex;
 
     & .footerContainer {
         display: flex;
         justify-content: space-around;
         gap: 2rem;
         align-items: center;
+        width: 100%;
 
         & .name {
             font-size: 1rem;
@@ -651,13 +673,14 @@ footer {
             display: flex;
             justify-content: center;
             gap: 1rem;
+            align-items: center;
 
             & a {
                 display: inline-block;
 
                 & img {
-                    width: 2rem;
-                    height: 2rem;
+                    width: 1.8rem;
+                    height: 1.8rem;
                     transition: transform 0.3s ease;
 
                     &:hover {
@@ -671,17 +694,35 @@ footer {
 
 @media (max-width: 768px) {
     footer {
-        & .footerContainer {
-            & .name {}
-        }
+        justify-content: center;
+        text-align: center;
     }
 
-    @media (max-width: 480px) {
-        footer {
-            & .footerContainer {
-                & .name {}
-            }
+    .footerContainer {
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .imgFooter {
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    footer {
+        .footerContainer {
+            gap: 0.5rem;
         }
+
+        .name {
+            font-size: 0.875rem;
+        }
+
+        .imgFooter img {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
     }
 }
 
