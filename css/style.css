@@ -204,8 +204,7 @@ header {
 
 /* #endregion */
 
-/* #region home*/
-
+/* #region home */
 #home {
     height: 96vh;
     padding: 2rem;
@@ -520,10 +519,9 @@ header {
     align-items: center;
     min-height: 100vh;
     gap: 8rem;
-
-    & .experiencias {
-
-        & h1 {
+    position: relative;
+    .experiencias {
+        h1 {
             padding: 3rem;
             display: flex;
             align-items: center;
@@ -532,53 +530,140 @@ header {
             font-size: 3rem;
         }
 
-        & .xpContainer {
+        .xpContainer {
             display: flex;
-            gap: 8rem;
-
-            & .experienciaContainer1 {
+            gap: 4rem;
+            align-items: center;
+            .experienciaContainer1,
+            .experienciaContainer2 {
                 width: 400px;
                 border: 1px solid var(--clr-sage);
                 border-radius: 1rem;
                 padding: 1rem;
                 color: var(--clr-vanilla);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                position: relative; /* Garante que elementos internos absolutos fiquem dentro da div */
 
-                & h2,
-                h4 {
-                    display: flex;
+                h2, h4 {
                     color: var(--clr-vanilla);
                 }
 
-                & p {
-                    margin: 1em 0 0 0;
-                    display: flex;
-                    justify-content: center;
+                p {
+                    margin-top: 1em;
                 }
-
             }
 
-            & .experienciaContainer2 {
-                width: 400px;
-                border: 1px solid var(--clr-sage);
-                border-radius: 1rem;
-                padding: 1rem;
-                color: var(--clr-vanilla);
+            .experienciaContainer1 {
+                margin-bottom: 28%;
+            }
 
-                & h2,
-                h4 {
-                    display: flex;
-                    color: var(--clr-vanilla);
+            .experienciaContainer2 {
+                margin-top: 40%;
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    #experiencia {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+        justify-content: center; /* Centraliza os itens na direção principal */
+        align-items: center; /* Centraliza os itens na direção transversal */
+        text-align: center;
+
+        .experiencias {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .xpContainer {
+                flex-direction: column;
+                gap: 2rem;
+
+                .experienciaContainer1,
+                .experienciaContainer2 {
+                    width: 90%;
+                    margin: 0;
+                    /* Adicionando margin-auto para centralizar os containers em relação ao xpContainer */
+                    margin-left: auto;
+                    margin-right: auto;
                 }
+            }
+        }
+    }
 
-                & p {
-                    margin: 1em 0 0 0;
-                    display: flex;
-                    justify-content: center;
+    .button {
+        padding: 0.8rem 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #experiencia {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        .experiencias {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .xpContainer {
+                flex-direction: column;
+                gap: 4rem;
+
+                .experienciaContainer1,
+                .experienciaContainer2 {
+                    width: 90%;
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+    .button {
+        padding: 0.8rem 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #experiencia {
+        gap: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .experiencias {
+            h1 {
+                font-size: 2rem;
+                padding: 2rem;
+            }
+
+            .xpContainer {
+                .experienciaContainer1,
+                .experienciaContainer2 {
+                    width: 100%;
+                    padding: 0.8rem;
+                    margin-left: auto;
+                    margin-right: auto;
+                    & p{
+                        display: none;
+                    }
                 }
             }
         }
     }
 }
+
 
 /* #endregion */
 
