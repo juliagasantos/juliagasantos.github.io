@@ -163,6 +163,7 @@ header {
             top: 110%;
             transform: translateX(-50%);
             flex-direction: column;
+
             & .active {
                 display: flex;
             }
@@ -187,6 +188,7 @@ header {
             transform: translateY(-50%);
         }
     }
+
     @media (max-width: 480px) {
         display: flex;
         justify-content: space-between;
@@ -205,6 +207,7 @@ header {
             top: 110%;
             transform: translateX(-50%);
             flex-direction: column;
+
             & .active {
                 display: flex;
             }
@@ -499,20 +502,33 @@ header {
 
 
         & .imgContainer {
-            padding: 1rem;
+            background-color: var(--clr-ebony);
+            padding: 3rem;
             display: flex;
-            gap: 20px;
+            gap: 1rem;
+            justify-content: space-around;
+            align-items: center;
+            border-radius: 2rem;
+            perspective: 1000px;
+            transition: transform 0.2s ease-out;
+            will-change: transform;
+            border: 1px solid var(--clr-vanilla);
 
             & .imgSobre {
                 display: flex;
-                gap: 10px;
+                gap: 1rem;
                 flex-direction: column;
 
                 & img {
                     border-radius: 1rem;
-                    width: 100px;
-                    height: 100px;
+                    width: 50px;
+                    height: auto;
                     object-fit: cover;
+                    transition: transform 0.3s ease-out, box-shadow 0.3s ease;
+
+                    &:hover {
+                        transform: scale(1.2);
+                    }
                 }
             }
         }
@@ -551,6 +567,77 @@ header {
             color: var(--clr-vanilla);
         }
     }
+}
+
+@media (max-width: 1024px) {
+    #sobre {
+        flex-direction: column;
+        gap: 4rem;
+        text-align: center;
+        align-items: center;
+    }
+
+    .toolingContainer {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .sobreContainer {
+        width: 80%;
+
+    }
+
+    .imgContainer {
+        width: 90%;
+
+        padding: 2rem;
+
+    }
+
+    .imgSobre img {
+        width: 70px;
+
+    }
+}
+
+
+@media (max-width: 768px) {
+    #sobre {
+        display: flex;
+        gap: 3rem;
+        text-align: center;
+        align-items: center;
+
+        & .toolingContainer {
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+
+            .imgContainer {
+                width: 90%;
+                /* Ajusta a largura da imagem */
+                padding: 2rem;
+
+                /* Reduz o padding */
+                .imgSobre img {
+                    width: 80px;
+                }
+            }
+        }
+
+        .sobreContainer {
+            width: 90%;
+        }
+
+    }
+
+
+
+}
+
+
+@media (max-width: 480px) {
+    #sobre {}
 }
 
 /* #endregion */
@@ -733,6 +820,7 @@ header {
                     & p {
                         display: none;
                     }
+
                     & .button {
                         display: flex;
                         border: 1px solid var(--clr-ebony);
@@ -742,15 +830,15 @@ header {
                         background-color: var(--clr-sage);
                         padding: 0.5rem 2rem;
                         margin: 1rem;
-    
+
                         & a {
                             color: var(--clr-midnight);
                             font-size: 1em;
                         }
-    
+
                         &:hover {
                             background-color: var(--clr-ebony);
-    
+
                             & a {
                                 color: var(--clr-vanilla);
                             }
@@ -941,12 +1029,12 @@ footer {
         text-align: center;
     }
 
-   & .footerContainer {
+    & .footerContainer {
         align-items: center;
         gap: 1rem;
     }
 
-   & .imgFooter {
+    & .imgFooter {
         gap: 0.5rem;
     }
 }
@@ -957,11 +1045,11 @@ footer {
             gap: 0.5rem;
         }
 
-     &   .name {
+        & .name {
             font-size: 1rem;
         }
 
-      &  .imgFooter img {
+        & .imgFooter img {
             width: 1.5rem;
             height: 1.5rem;
         }
